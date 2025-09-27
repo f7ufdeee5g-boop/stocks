@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TradingView Widgets</title>
+<style>
+  /* Container che contiene tutti i widget */
+  .widgets-wrapper {
+    display: flex;
+    flex-wrap: wrap;      /* i widget vanno a capo se lo spazio non basta */
+    gap: 20px;            /* spazio tra i widget */
+    justify-content: flex-start; /* allinea a sinistra */
+  }
+
+  /* Ogni widget mantiene dimensione fissa ma può ridursi su schermi piccoli */
+  .tradingview-widget-container {
+    flex: 1 1 250px; /* larghezza minima 250px, cresce fino a riempire lo spazio */
+    max-width: 250px;
+  }
+
+  body {
+    background-color: #1e1e1e; /* sfondo scuro */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Prezzi azionari in tempo reale</h1>
+
+<div class="widgets-wrapper">
+
+  <!-- Widget 1 -->
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+      <a href="https://www.tradingview.com/symbols/NASDAQ-ENPH/" target="_blank">
+        ENPH stock price
+      </a> by TradingView
+    </div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+    {
+      "symbol": "NASDAQ:ENPH",
+      "colorTheme": "dark",
+      "isTransparent": false,
+      "locale": "en",
+      "width": 250
+    }
+    </script>
+  </div>
+
+  <!-- Widget 2 -->
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+      <a href="https://www.tradingview.com/symbols/XETR-NOV/" target="_blank">
+        NOV stock price
+      </a> by TradingView
+    </div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+    {
+      "symbol": "XETR:NOV",
+      "colorTheme": "dark",
+      "isTransparent": false,
+      "locale": "en",
+      "width": 250
+    }
+    </script>
+  </div>
+
+  <!-- Widget 3 (esempio) -->
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+      <a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" target="_blank">
+        AAPL stock price
+      </a> by TradingView
+    </div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+    {
+      "symbol": "NASDAQ:AAPL",
+      "colorTheme": "dark",
+      "isTransparent": false,
+      "locale": "en",
+      "width": 250
+    }
+    </script>
+  </div>
+
+</div>
+
+</body>
+</html>
